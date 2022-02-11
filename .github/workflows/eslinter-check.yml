@@ -1,4 +1,4 @@
-name: linter-check
+name: eslinter-check
 on: push
 jobs:
   my-job:
