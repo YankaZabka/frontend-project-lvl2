@@ -1,4 +1,4 @@
-name: eslinter-check
+name: run-test
 on: push
 jobs:
   my-job:
