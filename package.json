@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/YankaZabka/frontend-project-lvl2#readme",
   "devDependencies": {
+    "@jest/globals": "^27.5.1",
     "eslint": "^8.8.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
