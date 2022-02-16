@@ -11,14 +11,14 @@ A difference calculator is a program that recognizes the difference between two 
 Support for different input formats: **yaml**, **json**    
 Report generation in **plain text**, **style** and **json**     
 ```
-# формат plain
+# plain format
 $ gendiff --format plain path/to/file.yml another/path/file.json
 
 Property 'common.follow' was added with value: false
 Property 'group1.baz' was updated. From 'bas' to 'bars'
 Property 'group2' was removed
 
-# формат stylish
+# stylish format
 $ gendiff filepath1.json filepath2.json
 
 {
