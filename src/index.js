@@ -38,9 +38,7 @@ const genDiff = (filePath1, filePath2) => {
   });
   const result = _.sortBy(diffObj, 'propertyName')
     .map((obj) => `  ${obj.diffValue} ${obj.propertyName}: ${obj.propertyValue}`);
-  const outputString = `{\n${result.join('\n')}\n}`;
-  console.log(outputString);
-  return outputString;
+  return `{\n${result.join('\n')}\n}`;
 };
 
 export default genDiff;
