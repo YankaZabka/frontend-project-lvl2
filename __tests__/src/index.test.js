@@ -6,7 +6,7 @@ import genDiff from '../../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const rightOutput = '{\n'
+const rightOutputForStylish = '{\n'
   + '    common: {\n'
   + '      + follow: false\n'
   + '        setting1: Value 1\n'
@@ -50,14 +50,35 @@ const rightOutput = '{\n'
   + '        fee: 100500\n'
   + '    }\n'
   + '}';
+const rightOutputForPlain = "Property 'common.follow' was added with value: false\n" +
+  "Property 'common.setting2' was removed\n" +
+  "Property 'common.setting3' was updated. From true to null\n" +
+  "Property 'common.setting4' was added with value: 'blah blah'\n" +
+  "Property 'common.setting5' was added with value: [complex value]\n" +
+  "Property 'common.setting6.doge.wow' was updated. From '' to 'so much'\n" +
+  "Property 'common.setting6.ops' was added with value: 'vops'\n" +
+  "Property 'group1.baz' was updated. From 'bas' to 'bars'\n" +
+  "Property 'group1.nest' was updated. From [complex value] to 'str'\n" +
+  "Property 'group2' was removed\n" +
+  "Property 'group3' was added with value: [complex value]"
 
-test('genDiff test with json', () => {
+test('genDiff test with json and stylish format', () => {
   const filePath1 = path.join(__dirname, '../..', '__fixtures__/file1.json');
   const filePath2 = path.join(__dirname, '../..', '__fixtures__/file2.json');
-  expect(genDiff(filePath1, filePath2)).toBe(rightOutput);
+  expect(genDiff(filePath1, filePath2)).toBe(rightOutputForStylish);
 });
-test('genDiff test with yaml', () => {
+test('genDiff test with yaml  and stylish format', () => {
   const filePath1 = path.join(__dirname, '../..', '__fixtures__/file1.yaml');
   const filePath2 = path.join(__dirname, '../..', '__fixtures__/file2.yml');
-  expect(genDiff(filePath1, filePath2)).toBe(rightOutput);
+  expect(genDiff(filePath1, filePath2)).toBe(rightOutputForStylish);
+});
+test('genDiff test with json  and plain format', () => {
+  const filePath1 = path.join(__dirname, '../..', '__fixtures__/file1.json');
+  const filePath2 = path.join(__dirname, '../..', '__fixtures__/file2.json');
+  expect(genDiff(filePath1, filePath2, "plain")).toBe(rightOutputForPlain);
+});
+test('genDiff test with yaml  and plain format', () => {
+  const filePath1 = path.join(__dirname, '../..', '__fixtures__/file1.yaml');
+  const filePath2 = path.join(__dirname, '../..', '__fixtures__/file2.yml');
+  expect(genDiff(filePath1, filePath2, 'plain')).toBe(rightOutputForPlain);
 });
