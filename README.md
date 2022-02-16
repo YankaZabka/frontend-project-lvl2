@@ -15,3 +15,6 @@
 ### nested JSON/JSON or YAML/YAML 
 ##### (format - 'plain')
 [![asciicast](https://asciinema.org/a/Tu4DwNVkRDJZBcgxGXE7ygNHV.svg)](https://asciinema.org/a/Tu4DwNVkRDJZBcgxGXE7ygNHV)
+### nested JSON/JSON or YAML/YAML 
+##### (format - 'json')
+[![asciicast](https://asciinema.org/a/Z7sXjgimVCcW1FrC6evq02Xdr.svg)](https://asciinema.org/a/Z7sXjgimVCcW1FrC6evq02Xdr)
